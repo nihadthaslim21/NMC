@@ -1,0 +1,409 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Medileaf - Health and Medical HTML Template" />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NMC pharmacy</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+    <!-- Google Font -->
+    <link href="static 'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  </head>
+
+  <body>
+
+    <!--=================================
+    header -->
+    <header class="header header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="topbar">
+              <div class="d-block d-md-flex align-items-center text-center">
+                <div class="me-0 me-sm-3 mb-3 mb-md-0 d-block d-sm-inline-block">
+                  <a href="#"><i class="far fa-envelope me-2"></i>helpcenter@medileaf.com</a>
+                </div>
+                <div class="me-auto mb-3 mb-md-0 d-block d-sm-inline-block">
+                  <a href="tel:1-800-555-1234"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i>+(704) 279-1249</a>
+                </div>
+                <div class="login mx-3 mb-3 mb-sm-0 d-block d-sm-inline-block">
+                  {% if user.is_authenticated %}
+                    <a>Hello {{ user.username }}</a>
+                    <span class="mx-2 text-white">|</span>
+                    <a  href="{% url 'logout1' %}">logout</a>
+                  {% else %}
+                  <a  href="{% url 'login' %}">Login</a>
+                  <span class="mx-2 text-white">|</span>
+                  <a  href="{% url 'register' %}">Register</a>
+                  {% endif %}
+                </div>
+                <div class="social d-block d-sm-inline-block">
+                  <ul class="list-unstyled">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <nav class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo">
+            </a>
+            <div class="navbar-collapse collapse justify-content-center">
+              <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <li><a class="dropdown-item" href="index.html">Home 01</a></li>
+                    <li><a class="dropdown-item" href="index-02.html">Home 02</a></li>
+                    <li><a class="dropdown-item" href="index-03.html">Home 03</a></li> -->
+                    <li><a class="dropdown-item" href="{% url 'index' %}">Home Shop</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Pages<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu megamenu dropdown-menu-lg">
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">About Me</a></li>
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                            <li><a class="dropdown-item" href="#">Team Single</a></li>
+                            <li><a class="dropdown-item" href="#">Gallery</a></li>
+                            <li><a class="dropdown-item" href="#">Before After</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="#">Pricing</a></li>
+                            <li><a class="dropdown-item" href="#">Faqs</a></li>
+                            <li><a class="dropdown-item" href="#">Appointment</a></li>
+                            <li><a class="dropdown-item" href="#">Cost Calculator</a></li>
+                            <li><a class="dropdown-item" href="#">Timetable</a></li>
+                            <li><a class="dropdown-item" href="#">Working Hours</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                            <li><a class="dropdown-item" href="{% url 'errorpage' %}">Error 404</a></li>
+                            <li><a class="dropdown-item" href="#">Coming Soon</a></li>
+                            <li><a class="dropdown-item" href="#">T&C</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a href="properties.html" class="nav-link" data-bs-toggle="dropdown">Services<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Service</a></li>
+                    <li><a class="dropdown-item" href="#">Departments</a></li>
+                    <li><a class="dropdown-item" href="#">Service Detail</a></li>
+                  </ul>
+                </li>
+                 <li class="dropdown nav-item">
+                  <a href="#" class="nav-link" data-bs-toggle="dropdown">Blog<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="#">Blog Detail</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop <i class="far fa-plus-square"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'shop' %}">Shop</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopsingle' 1 %}">Shop Single</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopcart'  %}">Shop Cart</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopcheckout' %}">Shop Checkout</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">
+                    Contact Us <i class="far fa-plus-square"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="add-listing d-none d-sm-block">
+              <a class="btn btn-outline-primary" href="#"><i class="fa fa-address-book"></i>Get a quote</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!--=================================
+    header -->
+
+    <!--=================================
+    banner -->
+    <section class="inner-banner bg-light">
+      <div class="container">
+        <div class="row align-items-center intro-title">
+          <div class="col-12">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}"> <i class="fas fa-home"></i> </a></li>
+              <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> contact-us</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    banner -->
+
+    <!--=================================
+    Contact-info-->
+    <section class="space-ptb half-overlay left-position position-relative">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 col-md-6 position-relative">
+            <!-- Get In Touch -->
+            <div class="contact-info">
+              <div class="section-title text-sm-start text-center">
+                <h3>Get In Touch With Us</h3>
+                <p>The best way is to develop and follow a plan. Start with your goals in mind and then work backwards to develop the plan.</p>
+              </div>
+
+              <!-- Address -->
+              <div class="feature-item d-sm-flex d-block text-sm-start text-center">
+                <div class="feature-item-icon mb-sm-0 mb-4">
+                  <i class="flaticon-location"></i>
+                </div>
+                <div class="feature-item-content">
+                  <h4 class="feature-item-title">Address</h4>
+                  <span>6580 Allison Turnpike Creminfort, AL 32808-4509</span>
+                </div>
+              </div>
+              <!-- Address -->
+
+              <!-- Phone -->
+              <div class="feature-item d-sm-flex d-block text-sm-start text-center">
+                <div class="feature-item-icon mb-sm-0 mb-4">
+                  <i class="flaticon-call"></i>
+                </div>
+                <div class="feature-item-content">
+                  <h4 class="feature-item-title">Phone</h4>
+                  <span>+0123 456 789</span>
+                  <span>+704 279 1249</span>
+                </div>
+              </div>
+              <!-- Phone -->
+
+              <!-- Email -->
+              <div class="feature-item mb-0 d-sm-flex d-block text-sm-start text-center">
+                <div class="feature-item-icon mb-sm-0 mb-4">
+                  <i class="flaticon-email"></i>
+                </div>
+                <div class="feature-item-content">
+                  <h4 class="feature-item-title">Email</h4>
+                  <span>support@medileaf.com</span>
+                  <span>letstalk@medileaf.com</span>
+                </div>
+              </div>
+              <!-- Email -->
+            </div>
+            <!-- Get In Touch -->
+          </div>
+          <div class="col-lg-7 col-md-6 mt-md-0 mt-5">
+            <!-- Contact-form -->
+            <div class="contact-form ms-lg-4">
+              <div class="section-title">
+                <h3>We'd love to hear from you</h3>
+                <p>The price is something not necessarily defined as financial. It could be time, effort, sacrifice, money or perhaps, something else.</p>
+              </div>
+              {% block body %}
+              <form action="" method="post">
+                {% csrf_token %}
+                <div class="row align-items-center">
+                  <div class="mb-3 col-md-6">
+                    <input type="text" class="form-control" id="first-name" placeholder="First Name" name="name">
+                  </div>
+                  <div class="mb-3 col-md-6">
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                  </div>
+                  <div class="mb-3 col-md-6">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="phone">
+                  </div>
+                   <div class="mb-3 col-md-6">
+                    <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+                  </div>
+                  <div class="mb-3 col-lg-12">
+                    <textarea class="form-control" rows="5" placeholder="Message" name="message"></textarea>
+                  </div>
+                  <div class="mb-3 col-sm-12 mb-0">
+                    <button type="submit" class="btn btn-outline-primary">Send Message</button>
+                  </div>
+                </div>
+                {% endblock %}
+              </form>
+            </div>
+            <!-- CSontact-form -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Contact-info-->
+
+    <!--=================================
+    Map -->
+    <section class="">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-lg-12">
+            <div class="map">
+              <!-- iframe START -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96873.54747598754!2d-74.01503722010821!3d40.64535309479206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24416947c2109%3A0x82765c7404007886!2sBrooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1583241765545!5m2!1sen!2sin" style="border:0; width: 100%; height: 100%" allowfullscreen=""></iframe>
+              <!-- iframe END -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Map -->
+
+    <!--=================================
+    footer -->
+    <footer class="space-pt bg-light footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <a href="{% url 'index' %}" class="footer-logo"><img class="img-fluid" src="{% static 'images/logo.png' %}" alt=""></a>
+            <p>There’s nothing in this story to make us think he was dreaming about riches.</p>
+            <div class="social-icon mt-3 mt-md-5">
+              <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+            <h6 class="text-primary">Useful Links</h6>
+            <div class="footer-useful-List">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Before After</a></li>
+                <li><a href="#">Cost Calculator</a></li>
+                <li><a href="#">Working Hours</a></li>
+              </ul>
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">Appointment</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Timetable</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Our Newsletter</h6>
+            <div class="footer-contact-info">
+              <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-fw fa-map-marker-alt text-primary"></i><span>594 E. Whitemarsh Street Mchenry, IL 60050</span></li>
+                <li><i class="fas fa-fw fa-phone-alt text-primary"></i><span>0123-456-789</span></li>
+              </ul>
+            </div>
+            <div class="footer-subscribe">
+              <p>Sign up to our newsletter to get the latest news and offers.</p>
+              <form>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Opening Hours</h6>
+            <div class="opening-time">
+              <ul class="list-unstyled">
+                <li><i class="far fa-clock pr-1 text-primary"></i> Mon - Tue<span class="float-end">08:30 - 18:30</span></li>
+                <li><i class="far fa-clock pr-1 text-primary"></i> Wed- Thu<span class="float-end">08:30 - 18:30</span></li>
+                <li><i class="far fa-clock pr-1 text-primary"></i> Friday<span class="float-end">08:30 - 18:30</span></li>
+                <li><i class="far fa-clock pr-1 text-primary"></i> Saturday<span class="float-end">08:30 - 18:30</span></li>
+                <li><i class="far fa-clock pr-1 text-primary"></i> Sunday<span class="float-end">09:30 - 15:30</span></li>
+                <li class="text-primary">Emergency<span class="float-end">24 hours</span></li>
+             </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center copyright text-md-start mb-3 mb-md-0">
+              <p class="mb-0"> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="{% url 'index' %}"> medileaf </a> All Rights Reserved</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="">
+                <ul class="list-unstyled list-inline mb-0">
+                  <li class="list-inline-item mb-0"><a href="#">Terms & Conditions</a></li>
+                  <li class="list-inline-item mb-0"><a href="#">FAQ</a></li>
+                  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--=================================
+    footer -->
+
+    <!--=================================
+    Javascript -->
+
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/popper/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+
+    <!-- Template Scripts (Do not remove)-->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+  </body>
+</html>

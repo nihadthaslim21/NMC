@@ -1,0 +1,988 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Medileaf - Health and Medical HTML Template" />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NMC pharmacy</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="{% static 'css/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/magnific-popup/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate/animate.min.css' %}"/>
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+
+    <!--=================================
+    header -->
+    <header class="header shop-header header-02 desktop-header d-none d-lg-block header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="topbar">
+              <div class="d-block d-md-flex align-items-center text-center">
+                <div class="me-3 d-inline-block">
+                  <a href="shjpharmacy@nmc.ae"><i class="far fa-envelope me-2"></i>shjpharmacy@nmc.ae
+                  </a>
+                </div>
+                <div class="me-auto d-inline-block">
+                  <a href="tel:+971 6 597 4180"><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i>+971 6 597 4180</a>
+                </div>
+                <div class="login mx-3 d-inline-block">
+                  {% if user.is_authenticated %}
+                    <a>Hello {{ user.username }}</a>
+                    <span class="mx-2 text-white">|</span>
+                    <a  href="{% url 'logout1' %}">logout</a>
+                  {% else %}
+                  <a  href="{% url 'login' %}">Login</a>
+                  <span class="mx-2 text-white">|</span>
+                  <a  href="{% url 'register' %}">Register</a>
+                  {% endif %}
+                </div>
+                <div class="social d-inline-block">
+                  <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/NMCRoyalHospitalSharjah/"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/nmcroyalsharjah?lang=en"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/nmc-royal-hospital-shj"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.pinterest.es/Nmcroyalsharjah/"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="https://www.instagram.com/nmcmedicalcentre/?hl=en"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo">
+            </a>
+          </div>
+          <div class="col-md-9 d-block d-md-flex justify-content-xl-end justify-content-center align-items-center">
+              <div class="d-flex me-3 me-xl-5">
+                <i class="flaticon-placeholder-1 fa-2x text-dark"></i>
+                <div class="ms-3">
+                  <span class="text-dark fw-bold">Bel Rasheed Tower, Buhaira Corniche </span>
+                  <p class="mb-0 small">Sharjah - United Arab Emirates </p>
+                </div>
+              </div>
+              <div class="d-flex me-3 me-xl-5">
+                <i class="flaticon-phone-call fa-2x text-dark"></i>
+                <div class="ms-3">
+                  <span class="text-dark fw-bold">+971 6 597 4180 </span>
+                  <p class="mb-0 small">Mon-Fri 7:00am-11:00pm </p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <i class="flaticon-email-2 fa-2x text-dark"></i>
+                <div class="ms-3">
+                  <span class="text-dark fw-bold">shjpharmacy@nmc.ae
+                  </span>
+                  <p class="mb-0 small">24 X 7 online support </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <nav class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+            <div class="navbar-collapse collapse justify-content-center">
+              <ul class="nav navbar-nav me-auto">
+                <li class="nav-item dropdown active">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<i class="far fa-plus-square"></i></a>
+                  <!-- <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Home 01</a></li>
+                    <li><a class="dropdown-item" href="index-02.html">Home 02</a></li>
+                    <li><a class="dropdown-item" href="index-03.html">Home 03</a></li>
+                    <li class="active"><a class="dropdown-item" href="index.html">Home Shop</a></li>
+                  </ul> -->
+                <!-- </li> -->
+                <li class="dropdown nav-item">
+                  <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Pages<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu megamenu dropdown-menu-lg">
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">About Me</a></li>
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                            <li><a class="dropdown-item" href="#">Team Single</a></li>
+                            <li><a class="dropdown-item" href="#">Gallery</a></li>
+                            <li><a class="dropdown-item" href="#">Before After</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="{% url 'pricing' %}">Pricing</a></li>
+                            <li><a class="dropdown-item" href="#">Faqs</a></li>
+                            <li><a class="dropdown-item" href="#">Appointment</a></li>
+                            <li><a class="dropdown-item" href="#">Cost Calculator</a></li>
+                            <li><a class="dropdown-item" href="#">Timetable</a></li>
+                            <li><a class="dropdown-item" href="#">Working Hours</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                            <li><a class="dropdown-item" href="{% url 'errorpage' %}">Error 404</a></li>
+                            <li><a class="dropdown-item" href="#">Coming Soon</a></li>
+                            <li><a class="dropdown-item" href="#">T&C</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a href="#" class="nav-link" data-bs-toggle="dropdown">Services<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Service</a></li>
+                    <li><a class="dropdown-item" href="#">Departments</a></li>
+                    <li><a class="dropdown-item" href="#">Service Detail</a></li>
+                  </ul>
+                </li>
+                 <li class="dropdown nav-item">
+                  <a href="#" class="nav-link" data-bs-toggle="dropdown">Blog<i class="far fa-plus-square"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="#">Blog Detail</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop <i class="far fa-plus-square"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'shop' %}">Shop</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopsingle' 1 %}">Shop Single</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopcart' %}">Shop Cart</a></li>
+                    <li><a class="dropdown-item" href="{% url 'shopcheckout' %}">Shop Checkout</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contactus' %}">Contact Us <i class="far fa-plus-square"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="add-listing d-none d-sm-block">
+              <div class="medi-tools">
+                  <ul class="medi-tools-actions">
+                    <li class="medi-tools-action medi-tools-compare">
+                      <a class="compare-link" href="#">
+                        <span class="compare-icon"><i class="glyph-icon flaticon-random"></i></span>
+                      </a>
+                    </li>
+                    <li class="medi-tools-action medi-tools-wishlist">
+                      <a href="{% url 'shopcart' %}">
+                        <i class="glyph-icon flaticon-heart"></i>
+                      </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="medi-tools-action medi-tools-cart">
+                      <a class="cart-link" href="{% url 'shopcart' %}">
+                        <span class="cart-icon"><i class="glyph-icon flaticon-shopping-bag"></i></span>
+                        <span class="cart-count count">3</span>
+                      </a>
+                      <div class="cart-contents">
+                        <div class="shopping_cart">
+                          <div class="shopping_cart_content">
+                            <p>No products in the cart.</p>
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <header class="header shop-header mobile-header d-block d-lg-none header-sticky">
+      <div class="main-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg header-sticky">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                  <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+                <div class="navbar-collapse collapse justify-content-center">
+                  <ul class="nav navbar-nav me-auto">
+                    <li class="nav-item dropdown active">
+                      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<i class="far fa-plus-square"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Home 01</a></li>
+                        <li><a class="dropdown-item" href="#">Home 02</a></li>
+                        <li><a class="dropdown-item" href="#">Home 03</a></li>
+                        <li><a class="dropdown-item" href="#">Home 04</a></li>
+                        <li class="active"><a class="dropdown-item" href="{% url 'index' %}">Home Shop</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown nav-item">
+                      <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Pages<i class="far fa-plus-square"></i></a>
+                      <ul class="dropdown-menu megamenu dropdown-menu-lg">
+                        <li>
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <h6 class="mb-3 nav-title">Pages</h6>
+                              <ul class="list-unstyled mt-lg-3">
+                                <li><a class="dropdown-item" href="#">About Us</a></li>
+                                <li><a class="dropdown-item" href="#">About Me</a></li>
+                                <li><a class="dropdown-item" href="#">Team</a></li>
+                                <li><a class="dropdown-item" href="#">Team Single</a></li>
+                                <li><a class="dropdown-item" href="#">Gallery</a></li>
+                                <li><a class="dropdown-item" href="#">Before After</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <h6 class="mb-3 nav-title">Pages</h6>
+                              <ul class="list-unstyled mt-lg-3">
+                                <li><a class="dropdown-item" href="{% url 'pricing' %}">Pricing</a></li>
+                                <li><a class="dropdown-item" href="#">Faqs</a></li>
+                                <li><a class="dropdown-item" href="#">Appointment</a></li>
+                                <li><a class="dropdown-item" href="#">Cost Calculator</a></li>
+                                <li><a class="dropdown-item" href="#">Timetable</a></li>
+                                <li><a class="dropdown-item" href="#">Working Hours</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-4">
+                              <h6 class="mb-3 nav-title">Pages</h6>
+                              <ul class="list-unstyled mt-lg-3">
+                                <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                                <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                                <li><a class="dropdown-item" href="{% url 'errorpage' %}">Error 404</a></li>
+                                <li><a class="dropdown-item" href="#">Coming Soon</a></li>
+                                <li><a class="dropdown-item" href="#">T&C</a></li>
+                                <li><a class="dropdown-item" href="{% url 'privacypolicy' %}">Privacy Policy</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown nav-item">
+                      <a href="#" class="nav-link" data-bs-toggle="dropdown">Services<i class="far fa-plus-square"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Service</a></li>
+                        <li><a class="dropdown-item" href="#">Departments</a></li>
+                        <li><a class="dropdown-item" href="#">Service Detail</a></li>
+                      </ul>
+                    </li>
+                     <li class="dropdown nav-item">
+                      <a href="#" class="nav-link" data-bs-toggle="dropdown">Blog<i class="far fa-plus-square"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Blog</a></li>
+                        <li><a class="dropdown-item" href="#">Blog Detail</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shop <i class="far fa-plus-square"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'shop' %}">Shop</a></li>
+                        <li><a class="dropdown-item" href="{% url 'shopsingle' 1 %}">Shop Single</a></li>
+                        <li><a class="dropdown-item" href="{% url 'shopcart' %}">Shop Cart</a></li>
+                        <li><a class="dropdown-item" href="{% url 'shopcheckout' %}">Shop Checkout</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Contact Us <i class="far fa-plus-square"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="add-listing d-none d-sm-block">
+                  <div class="medi-tools">
+                      <ul class="medi-tools-actions">
+                        <li class="medi-tools-action medi-tools-compare">
+                          <a class="compare-link" href="#">
+                            <span class="compare-icon"><i class="glyph-icon flaticon-random"></i></span>
+                          </a>
+                        </li>
+                        <li class="medi-tools-action medi-tools-wishlist">
+                          <a href="{% url 'shopcart' %}">
+                            <i class="glyph-icon flaticon-heart"></i>
+                            <span class="wishlist medistore-wishlist-count"> 7</span>
+                          </a>
+                        </li>
+                        <li class="medi-tools-action medi-tools-cart">
+                          <a class="cart-link" href="#">
+                            <span class="cart-icon"><i class="glyph-icon flaticon-shopping-bag"></i></span>
+                            <span class="cart-count count">3</span>
+                          </a>
+                          <div class="cart-contents">
+                            <div class="shopping_cart">
+                              <div class="shopping_cart_content">
+                                <p>No products in the cart.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--=================================
+    header -->
+
+    <!--=================================
+    banner -->
+    <section class="slider-01 banner-01">
+      <div id="main-slider" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide align-items-center d-flex  space-pt bg-overlay-secondary-02-10">
+            <div class="position-absolute top-0 left-0">
+              <img class="img-fluid" src="{% static 'images/bg/12.png' %}" alt="">
+            </div>
+            <div class="position-absolute bottom-0 right-0 d-none d-lg-inline-block">
+              <img class="img-fluid" src="{% static 'images/bg/09.png' %}" alt="">
+            </div>
+            <div class="swipeinner container">
+              <div class="row align-items-center text-left">
+                <div class="col-lg-6 col-md-5 z-index-1 pb-5 pb-md-0 align-self-lg-end order-md-2 d-none d-md-inline-block">
+                  <div class="slider-1">
+                    <div class="animated" data-swiper-animation="fadeInUp" data-duration="1s" data-delay="0.25s">
+                      <img class="img-fluid ml-lg-7 animated" data-swiper-animation="fadeInUp" data-duration="1.5s" data-delay="0.25s" src="{% static 'images/shop/banner-07.png' %}" alt="">
+                      <div class="banner-img6 position-absolute top-0 right-0 mt-n4 z-index-n1 animated" data-swiper-animation="fadeInUp" data-duration="0.5s" data-delay="0.25s">
+                        <img class="img-fluid" src="{% static 'images/svg/19.svg' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-7 pb-5 pb-md-0 pr-xl-6 order-md-1">
+                  <div class="slider-1">
+                    <div class="animated" data-swiper-animation="fadeInLeft" data-duration="1s" data-delay="0.25s">
+                      <h1 class="animated" data-swiper-animation="fadeInLeft" data-duration="1.35s" data-delay="1.0s">Get all your prescription delivered to your doorstep</h1>
+                      <!-- <p class="mb-lg-5 mb-4 h4 mt-4 animated" data-swiper-animation="fadeInLeft" data-duration="2.10s" data-delay="1.35s">Free Shipping on Order Over <span class="text-primary"> $10 </span></p> -->
+                      <a href="#" class="animated4 btn btn-primary mt-2" data-swiper-animation="fadeInLeft" data-duration="2.45s" data-delay="2.10s">Shop now</a>
+                      <div class="banner-img6 position-absolute bottom-0 right-0">
+                        <img class="img-fluid" src="{% static 'images/bg/10.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide align-items-center d-flex  space-pt bg-overlay-secondary-02-10">
+            <div class="position-absolute top-0 right-0">
+              <img class="img-fluid" src="{% static 'images/bg/12.png' %}" alt="">
+            </div>
+            <div class="position-absolute bottom-0 left-0 d-none d-lg-inline-block">
+              <img class="img-fluid" src="{% static 'images/bg/09.png' %}" alt="">
+            </div>
+            <div class="swipeinner container">
+              <div class="row align-items-center text-left">
+                <div class="col-lg-6 col-md-5 z-index-1 pb-5 pb-md-0 align-self-lg-end d-none d-md-inline-block">
+                  <div class="slider-1">
+                    <div class="animated" data-swiper-animation="fadeInUp" data-duration="1s" data-delay="0.25s">
+                      <img class="img-fluid mr-lg-7 animated" data-swiper-animation="fadeInUp" data-duration="1.5s" data-delay="0.25s" src="{% static 'images/shop/banner-06.png' %}" alt="">
+                      <div class="banner-img6 position-absolute top-0 left-0 mt-n4 z-index-n1 animated" data-swiper-animation="fadeInUp" data-duration="0.50s" data-delay="0.25s">
+                        <img class="img-fluid" src="{% static 'images/svg/19.svg' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-7 pb-5 pb-md-0 pl-xl-6">
+                  <div class="slider-1">
+                    <div class="animated" data-swiper-animation="fadeInRight" data-duration="1s" data-delay="0.25s">
+                      <h1 class="animated" data-swiper-animation="fadeInRight" data-duration="1.35s" data-delay="1s">Alcohol Based Germ Protection Hand Sanitizer</h1>
+                      <p class="mb-lg-5 mb-4 h4 mt-4 animated" data-swiper-animation="fadeInRight" data-duration="2.10s" data-delay="1.35s">Free Shipping on Order Over <span class="text-primary"> $10 </span></p>
+                      <a href="#" class="animated4 btn btn-primary mt-2" data-swiper-animation="fadeInRight" data-duration="2.10s" data-delay="2.45s">Shop now</a>
+                      <div class="banner-img6 position-absolute bottom-0 right-0">
+                        <img class="img-fluid" src="{% static 'images/bg/10.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"><i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"><i class="fas fa-chevron-right"></i></div>
+    </section>
+    <!--=================================
+    banner -->
+
+    <!--=================================
+    shop banner -->
+    <div class="space-ptb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="medistore_banner medistore_banner-effect-zoom medistore-banner-1">
+              <img src="{% static 'images/shop/ek.png' %}" alt="img" class="ciyastore_banner-image w-100">
+              <div class="medistore_banner-content medistore_banner-content-hcenter medistore_banner-content-vtop">
+                <!-- <div class="medistore_banner-content-wrapper">
+                  <div class="medistore_banner-content-inner-wrapper">
+                    <div class="medistore_banner-text-wrap-1">
+                      <h4 class="medistore_banner-text">40% Discount</h4>
+                    </div>
+                    <div class="medistore_banner-text-wrap-2">
+                      <h4 class="medistore_banner-text">Best Hand Sanitizer</h4>
+                    </div>
+                    <div class="medistore_banner-btn-wrap">
+                      <a href="#" class="btn btn-md btn-primary btn-white">Shop Now</a>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="medistore_banner medistore_banner-effect-zoom medistore-banner-2 mb-4">
+              <img src="{% static 'images/shop/ghk.png' %}" alt="img" class="ciyastore_banner-image w-100">
+              <div class="medistore_banner-content medistore_banner-content-hright medistore_banner-content-vmiddle">
+                <div class="medistore_banner-content-wrapper">
+                  <!-- <div class="medistore_banner-content-inner-wrapper">
+                    <div class="medistore_banner-text-wrap-1">
+                      <h5 class="medistore_banner-text">30% Discount</h5>
+                    </div>
+                    <div class="medistore_banner-text-wrap-2">
+                      <h5 class="medistore_banner-text">Special Face Mask</h5>
+                    </div>
+                    <div class="medistore_banner-btn-wrap">
+                      <a href="#" class="btn btn-md btn-primary btn-white">Shop Now</a>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="medistore_banner medistore_banner-effect-zoom medistore-banner-2">
+              <img src="{% static 'images/shop/hh.png' %}" alt="img" class="ciyastore_banner-image w-100">
+              <div class="medistore_banner-content medistore_banner-content-hleft medistore_banner-content-vmiddle">
+                <div class="medistore_banner-content-wrapper">
+                  <!-- <div class="medistore_banner-content-inner-wrapper">
+                    <div class="medistore_banner-text-wrap-1">
+                      <h5 class="medistore_banner-text">30% Discount</h5>
+                    </div>
+                    <div class="medistore_banner-text-wrap-2">
+                      <h5 class="medistore_banner-text">Digital Infrared <br> Thermometer Gun</h5>
+                    </div>
+                    <div class="medistore_banner-btn-wrap">
+                      <a href="#" class="btn btn-md btn-primary btn-white">Shop Now</a>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="medistore_banner medistore_banner-effect-zoom medistore-banner-1">
+              <img src="{% static 'images/shop/ix.png' %}" alt="img" class="ciyastore_banner-image w-100">
+              <div class="medistore_banner-content medistore_banner-content-hcenter medistore_banner-content-vtop">
+                <div class="medistore_banner-content-wrapper">
+                  <!-- <div class="medistore_banner-content-inner-wrapper">
+                    <div class="medistore_banner-text-wrap-1">
+                      <h4 class="medistore_banner-text">40% Discount</h4>
+                    </div>
+                    <div class="medistore_banner-text-wrap-2">
+                      <h4 class="medistore_banner-text">PPE Disposable Clothing</h4>
+                    </div>
+                    <div class="medistore_banner-btn-wrap">
+                      <a href="#" class="btn btn-md btn-primary btn-white">Shop Now</a>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--=================================
+    shop banner -->
+
+    <!--=================================
+    product -->
+    <section class="space-pb">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <div class="section-title center-divider">
+              <span>Popular products</span>
+              <h2>Exclusive Deals</h2>
+              <p class="mb-0">Indulge in Exclusive Saving. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for p in pro %}
+          <div class="col-md-6 col-lg-3 mb-4 mb-sm-5">
+            <div class="product">
+               <div class="product-image">
+                  <img class="img-fluid mx-auto" src="{{ p.images.url }}" alt="">
+                  <div class="product-overlay">
+                    <!-- <div class="add-to-cart">
+                      <a href="#">add to cart</a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="product-description">
+                  <div class="product-title">
+                     <a href="{% url 'shopsingle' p.id %}">{{ p.medicine }}</a>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star-half-alt text-warning"></i>
+                    <i class="far fa-star text-warning"></i>
+                  </div>
+                  <div class="product-price">
+                    <del>AED
+                      {{ p.price }}</del> <ins>AED
+                        {{ p.off_price }}</ins>
+                  </div>
+              </div>
+           </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    product -->
+
+    <!--=================================
+    call to action -->
+    <section class="space-ptb bg-overlay-white-50 bg-holder" data-jarallax='{"speed": 0.6}' style="background-image: url(' {% static 'images/bg/06.jpg' %} ')">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center position-relative">
+            <div class="section-title mb-0">
+              <h2 class="title mb-2">High-class equipment</h2>
+              <p class="mb-4">Save your and your family`s health</p>
+              <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    call to action -->
+
+    <!--=================================
+    shop category -->
+    <section class="space-pt">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <div class="section-title center-divider">
+              <h2>Popular categories</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Categories-01 START -->
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/01.jpg' %}')">
+              <h5>Medical Supply</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Anesthesia Supplies & Products</a></li>
+                <li><a href="#">Compression</a></li>
+                <li><a href="#">Gloves</a></li>
+                <li><a href="#">Lab supplies and equipment</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-01 END -->
+
+          <!-- Categories-02 START -->
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/02.jpg' %}')">
+              <h5>Instrument</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Littmann Classic III Stethoscopes</a></li>
+                <li><a href="#">BP Checkers</a></li>
+                <li><a href="#">Pulse Oximeter</a></li>
+                <li><a href="#">Ophthalmoscopes</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-02 END -->
+
+          <!-- Categories-03 START -->
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/03.jpg' %}')">
+              <h5>Surgical</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Absorbent Cotton - 500 grams</a></li>
+                <li><a href="#">Sutures India Truseal Tissue Adhesive</a></li>
+                <li><a href="#">Romsons Romo Vac Wound Closure Suction Set</a></li>
+                <li><a href="#">Romsons Dermark Surgical Marker</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-03 END -->
+
+          <!-- Categories-04 START -->
+          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/04.jpg' %}')">
+              <h5>Hospital Items</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Surgery Rooms</a></li>
+                <li><a href="#">Hospital bed</a></li>
+                <li><a href="#">Electrocardiography</a></li>
+                <li><a href="#">Ventilator</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-04 END -->
+
+          <!-- Categories-05 START -->
+          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/05.jpg' %}')">
+              <h5>Laboratory</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">ERLENMEYER FLASK</a></li>
+                <li><a href="#">TEST TUBE</a></li>
+                <li><a href="#">GRADUATED CYLINDER</a></li>
+                <li><a href="#">SAFETY GOGGLES</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-05 END -->
+
+          <!-- Categories-06 START -->
+          <div class="col-lg-4 col-sm-6">
+            <div class="shop-category bg-holder" style="background-image: url('{% static 'images/shop/category/06.jpg' %}')">
+              <h5>Rehabilitation</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Hi-Tech Range</a></li>
+                <li><a href="#">Cervical Aids</a></li>
+                <li><a href="#">Body, Belts & Braces</a></li>
+                <li><a href="#">Shoulder, Arm & Clavicle</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Categories-06 END -->
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    shop category -->
+
+    <!--=================================
+    Clients -->
+    <section class="space-ptb clients">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <!-- Owl-carousel -->
+            <div class="owl-carousel bg-light p-4" data-nav-arrow="false" data-items="5" data-md-items="4" data-sm-items="3" data-xs-items="2" data-xx-items="1" data-space="30" data-autoheight="true">
+              <!-- Client-01 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/panadol.png' %}" alt="">
+              </div>
+              <!-- Client-01 END -->
+
+              <!-- Client-02 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/seba-med.png' %}" alt="">
+              </div>
+              <!-- Client-02 END -->
+
+              <!-- Client-03 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/sunshine.png' %}" alt="">
+              </div>
+              <!-- Client-03 END -->
+
+              <!-- Client-04 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/la-roche-posay.png' %}" alt="">
+              </div>
+              <!-- Client-04 END -->
+
+              <!-- Client-05 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/vichy.png' %}" alt="">
+              </div>
+              <!-- Client-05 END -->
+
+              <!-- Client-06 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/nutritionl.png' %}" alt="">
+              </div>
+              <!-- Client-06 END -->
+
+              <!-- Client-07 START -->
+              <div class="item">
+                <img class="img-fluid center-block mx-auto" src="{% static 'images/client/bebederm.png' %}" alt="">
+              </div>
+              <!-- Client-07 END -->
+            </div>
+            <!-- Owl-carousel -->
+          </div>
+        </div>
+       </div>
+    </section>
+    <!--=================================
+    Clients -->
+
+    <!--=================================
+    blog -->
+    <!-- <section class="space-sm-pb">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title center-divider text-center">
+              <span>Check out our</span>
+              <h2>Latest news &amp; blogs</h2>
+              <p class="mb-0">Check out our latest blog posts, articles, client success stories and essential announcement</p>
+            </div>
+          </div>
+        </div>
+        <div class="row"> -->
+          <!-- Blog-01 START -->
+          <!-- <div class="col-lg-4 col-md-6">
+            <div class="blog-post blog-post-01">
+              <div class="blog-post-image mb-4">
+                <img class="img-fluid" src="images/blog/01.jpg" alt="">
+              </div>
+              <div class="blog-post-content py-0">
+                <div class="blog-post-details">
+                  <h6 class="blog-post-title"><a href="blog-detail.html">Coronavirus Disease 2020</a></h6>
+                  <div class="blog-post-meta">
+                    <div class="blog-post-author">
+                      <span> By <a href="#"> <img class="img-fluid" src="images/avatar/01.jpg" alt="">Alice Williams</a></span>
+                    </div>
+                    <div class="blog-post-time">
+                      <a href="#"><i class="far fa-clock text-primary"></i>25 March 2018</a>
+                    </div>
+                  </div>
+                  <div class="blog-post-description">
+                    <p>Imagine reaching deep inside you for all the strength and wisdom that you.</p>
+                    <a href="blog-detail.html" class="btn btn-link mb-2">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Blog-01 END -->
+
+          <!-- Blog-02 START -->
+          <!-- <div class="col-lg-4 col-md-6">
+            <div class="blog-post blog-post-01">
+              <div class="blog-post-image mb-4">
+                <img class="img-fluid" src="images/blog/02.jpg" alt="">
+              </div>
+              <div class="blog-post-content py-0">
+                <div class="blog-post-details">
+                  <h6 class="blog-post-title"><a href="blog-detail.html">Six Information Signs Of Cancer</a></h6>
+                  <div class="blog-post-meta">
+                    <div class="blog-post-author">
+                      <span> By <a href="#"> <img class="img-fluid" src="images/avatar/02.jpg" alt="">Mellissa Doe</a></span>
+                    </div>
+                    <div class="blog-post-time">
+                      <a href="#"><i class="far fa-clock text-primary"></i>25 March 2018</a>
+                    </div>
+                  </div>
+                  <div class="blog-post-description">
+                    <p>Imagine reaching deep inside you for all the strength and wisdom that you.</p>
+                    <a href="blog-detail.html" class="btn btn-link mb-2">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Blog-02 END -->
+
+          <!-- Blog-03 START -->
+          <!-- <div class="col-lg-4 col-md-6">
+            <div class="blog-post blog-post-01">
+              <div class="blog-post-image mb-4">
+                <img class="img-fluid" src="images/blog/03.jpg" alt="">
+              </div>
+              <div class="blog-post-content py-0">
+                <div class="blog-post-details">
+                  <h6 class="blog-post-title"><a href="blog-detail.html">The Loveliness Of The Youth</a></h6>
+                  <div class="blog-post-meta">
+                    <div class="blog-post-author">
+                      <span> By <a href="#"> <img class="img-fluid" src="images/avatar/03.jpg" alt="">Paul Flavius</a></span>
+                    </div>
+                    <div class="blog-post-time">
+                      <a href="#"> <i class="far fa-clock text-primary"></i>25 March 2018</a>
+                    </div>
+                  </div>
+                  <div class="blog-post-description">
+                    <p>Imagine reaching deep inside you for all the strength and wisdom that you need.</p>
+                    <a href="blog-detail.html" class="btn btn-link mb-2">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Blog-03 END -->
+        <!-- </div>
+      </div>
+    </section> -->
+    <!--=================================
+    blog -->
+
+    <!--=================================
+    footer -->
+    <footer class="space-pt footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <a href="{% url 'index' %}" class="footer-logo"><img class="img-fluid" src="{% static 'images/logo.png' %}" alt=""></a>
+            <p>Along with your plans, you should consider developing an action orientation.</p>
+            <div class="social-icon mt-3 mt-md-5">
+              <ul>
+                <li><a href="https://www.facebook.com/NMCRoyalHospitalSharjah/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/nmcroyalsharjah?lang=en"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/nmc-royal-hospital-shj"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.pinterest.es/Nmcroyalsharjah/"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="https://www.instagram.com/nmcmedicalcentre/?hl=en"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+            <h6 class="text-primary">Useful Links</h6>
+            <div class="footer-useful-List">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Before After</a></li>
+                <li><a href="#">Cost Calculator</a></li>
+                <li><a href="#">Working Hours</a></li>
+              </ul>
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">Appointment</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Timetable</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Our Newsletter</h6>
+            <div class="footer-contact-info">
+              <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-fw fa-map-marker-alt text-primary"></i><span>Bel Rasheed Tower, Buhaira Corniche,Sharjah - United Arab Emirates</span></li>
+                <li><i class="fas fa-fw fa-phone-alt text-primary"></i><span>+971 6 597 4180</span></li>
+              </ul>
+            </div>
+            <div class="footer-subscribe">
+              <p>Sign up to our newsletter to get the latest news and offers.</p>
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Opening Hours</h6>
+            <div class="opening-time">
+              <ul class="list-unstyled">
+                <li><i class="far fa-clock pe-1 text-primary"></i> Mon - Tue<span class="float-end">07:00 am - 11:00 pm</span></li>
+                <li><i class="far fa-clock pe-1 text-primary"></i> Wed- Thu<span class="float-end">07:00 am - 11:00 pm</span></li>
+                <li><i class="far fa-clock pe-1 text-primary"></i> Friday<span class="float-end">08:30 am - 09:30 pm</span></li>
+                <li><i class="far fa-clock pe-1 text-primary"></i> Saturday<span class="float-end">07:00 am - 11:00 pm</span></li>
+                <li><i class="far fa-clock pe-1 text-primary"></i> Sunday<span class="float-end">07:00 am - 11:00 pm</span></li>
+                <li class="text-primary">Emergency<span class="float-end">24 hours</span></li>
+             </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center copyright text-md-start mb-3 mb-md-0">
+              <p class="mb-0"> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="{% url 'index' %}"> medileaf </a> All Rights Reserved</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="">
+                <ul class="list-unstyled list-inline mb-0">
+                  <li class="list-inline-item mb-0"><a href="#">Terms & Conditions</a></li>
+                  <li class="list-inline-item mb-0"><a href="#">FAQ</a></li>
+                  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--=================================
+    footer -->
+
+    <!--=================================
+    back to top-->
+     <a id="back-to-top" class="back-to-top" href="#"><i class="fas fa-angle-up"></i> </a>
+    <!--=================================
+    back to top-->
+
+    <!--=================================
+    Javascript -->
+
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/popper/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'js/jarallax/jarallax-video.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'js/swiperanimation/SwiperAnimation.min.js' %}"></script>
+
+    <!-- Template Scripts (Do not remove)-->
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>

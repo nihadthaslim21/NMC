@@ -1,0 +1,1302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="HTML5 Template" />
+    <meta
+      name="description"
+      content="Medileaf - Health and Medical HTML Template"
+    />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>NMC pharmacy</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+    <!-- Google Font -->
+    <link
+      href="{% static 'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap' %}"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="{% static 'css/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/range-slider/ion.rangeSlider.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/slick/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/magnific-popup/magnific-popup.css' %}" />
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <!--=================================
+    header -->
+    <header class="header header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="topbar">
+              <div class="d-block d-md-flex align-items-center text-center">
+                <div
+                  class="me-0 me-sm-3 mb-3 mb-md-0 d-block d-sm-inline-block"
+                >
+                  <a href="#"
+                    ><i class="far fa-envelope me-2"></i
+                    >helpcenter@medileaf.com</a
+                  >
+                </div>
+                <div class="me-auto mb-3 mb-md-0 d-block d-sm-inline-block">
+                  <a href="tel:1-800-555-1234"
+                    ><i class="fa fa-phone me-2 fa fa-flip-horizontal"></i
+                    >+(704) 279-1249</a
+                  >
+                </div>
+                <div class="login mx-3 mb-3 mb-sm-0 d-block d-sm-inline-block">
+                  {% if user.is_authenticated %}
+                    <a>Hello {{ user.username }}</a>
+                    <span class="mx-2 text-white">|</span>
+                    <a  href="{% url 'logout1' %}">logout</a>
+                  {% else %}
+                  <a  href="{% url 'login' %}">Login</a>
+                  <span class="mx-2 text-white">|</span>
+                  <a  href="{% url 'register' %}">Register</a>
+                  {% endif %}
+                </div>
+                <div class="social d-block d-sm-inline-block">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <nav
+            class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg"
+          >
+            <button
+              type="button"
+              class="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target=".navbar-collapse"
+            >
+              <i class="fas fa-align-left"></i>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo" />
+            </a>
+            <div class="navbar-collapse collapse justify-content-center">
+              <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link"
+                    href="{% url 'index' %}"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Home<i class="far fa-plus-square"></i></a>
+                  <ul>
+                    <!-- <li>
+                      <a class="dropdown-item" href="index.html">Home 01</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="index-02.html">Home 02</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="index-03.html">Home 03</a>
+                    </li> -->
+                    <li>
+                      <a class="dropdown-item" href="{% url 'index' %}"
+                        >Home Shop</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a
+                    class="nav-link"
+                    href="javascript:void(0)"
+                    data-bs-toggle="dropdown"
+                    >Pages<i class="far fa-plus-square"></i
+                  ></a>
+                  <ul class="dropdown-menu megamenu dropdown-menu-lg">
+                    <li>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >About Us</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >About Me</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#">Team</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Team Single</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Gallery</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Before After</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li>
+                              <a class="dropdown-item" href="{% url 'pricing' %}"
+                                >Pricing</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#">Faqs</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Appointment</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="#"
+                                >Cost Calculator</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Timetable</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Working Hours</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <h6 class="mb-3 nav-title">Pages</h6>
+                          <ul class="list-unstyled mt-lg-3">
+                            <li>
+                              <a class="dropdown-item" href="{% url 'login' %}"
+                                >Login</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="{% url 'register' %}"
+                                >Register</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="{% url 'errorpage' %}"
+                                >Error 404</a
+                              >
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"
+                                >Coming Soon</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="#"
+                                >T&C</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="#"
+                                >Privacy Policy</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a href="#" class="nav-link" data-bs-toggle="dropdown"
+                    >Services<i class="far fa-plus-square"></i
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Service</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Departments</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Service Detail</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown nav-item">
+                  <a href="#" class="nav-link" data-bs-toggle="dropdown"
+                    >Blog<i class="far fa-plus-square"></i
+                  ></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Blog Detail</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown active">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Shop <i class="far fa-plus-square"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'shop' %}">Shop</a></li>
+                    <li class="active">
+                      <a class="dropdown-item" href="{% url 'shopsingle' 1 %}"
+                        >Shop Single</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'shopcart' %}"
+                        >Shop Cart</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'shopcheckout' %}"
+                        >Shop Checkout</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contactus' %}">
+                    Contact Us <i class="far fa-plus-square"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="add-listing d-none d-sm-block">
+              <a class="btn btn-outline-primary" href="#"
+                ><i class="fa fa-address-book"></i>Get a quote</a
+              >
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!--=================================
+    header -->
+
+    <!--=================================
+    banner -->
+    <section class="inner-banner bg-light">
+      <div class="container">
+        <div class="row align-items-center intro-title">
+          <div class="col-12">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item">
+                <a href="{% url 'index' %}"> <i class="fas fa-home"></i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <i class="fas fa-chevron-right"></i>
+                <a href="{% url 'shop' %}">Shop</a>
+              </li>
+              <li class="breadcrumb-item active">
+                <i class="fas fa-chevron-right"></i>
+                <span>{{ pro.medicine }}</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    banner -->
+
+    <!--=================================
+    product -->
+    <section class="space-ptb shop-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              {% for p in pro %}
+              <div class="col-md-5 mb-4 mb-md-0">
+                <div class="slider-slick">
+                  <div class="slider slider-for detail-big-car-gallery">
+                    <img src="{{ p.images.url }}" alt="" />
+                    <img src="{{ p.images.url }}" alt="" />
+                    <img src="{{ p.images.url }}" alt="" />
+                    <img src="{{ p.images.url }}" alt="" />
+                    <img src="{{ p.images.url }}" alt="" />
+                    <img src="{{ p.images.url }}" alt="" />
+                  </div>
+                  <div class="slider slider-nav mt-2">
+                    <img src="{% static 'images/shop/01.jpg' %}" alt="" />
+                    <img src="{% static 'images/shop/02.jpg' %}" alt="" />
+                    <img src="{% static 'images/shop/03.jpg' %}" alt="" />
+                    <img src="{% static 'images/shop/04.jpg' %}" alt="" />
+                    <img src="{% static 'images/shop/05.jpg' %}" alt="" />
+                    <img src="{% static 'images/shop/06.jpg' %}" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="product-detail">
+                  <h4>{{ p.medicine }}</h4>
+                  <div class="product-price-rating">
+                    <div class="product-rating d-flex">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                      <a href="#reviews" class="text-dark ms-2" rel="nofollow"
+                        >(<span class="count">4</span> customer reviews)</a
+                      >
+                    </div>
+                    <div class="product-price">
+                      <h4><del>AED{{ p.price }}</del><span>AED{{ p.off_price }}</span></h4>
+                    </div>
+                  </div>
+                  <p>
+                   {{ p.description }}
+                  </p>
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      name="quant[1]"
+                      class="form-control input-number"
+                      value="1"
+                      min="1"
+                      max="10"
+                    />
+                  </div>
+                  {% if user.is_authenticated %}
+                  <a class="btn btn-primary" href="{% url 'add_to_cart' p.id %}"
+                    ><i class="fas fa-shopping-cart"></i> Add To Cart
+                  {% endif %}
+                  </a>
+                  <div class="product-summary">
+                    <a class="" href="#"
+                      ><i class="far fa-heart"></i>Add to Wishlist</a
+                    >
+                    <a class="" href="#"
+                      ><i class="fa fa-compress-alt" aria-hidden="true"></i
+                      >Compare</a
+                    >
+                  </div>
+                  <hr />
+                  <div class="product-detail-meta">
+                    <span>SKU: 9624 </span>
+                    <span>Category: <a href="#"> Fever, headache</a> </span>
+                    <span
+                      >Tags: <a href="#"></a>
+                      <a href="#">Migraine,</a>
+                      <a href="#">toothache</a>
+                    </span>
+                  </div>
+                  <div class="product-detail-social">
+                    <span>Share :</span>
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <ul class="nav nav-tabs nav-tabs-02" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="description-tab"
+                  data-bs-toggle="tab"
+                  href="#description"
+                  role="tab"
+                  aria-controls="description"
+                  aria-selected="true"
+                  >Description</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="tab-reviews"
+                  data-bs-toggle="tab"
+                  href="#reviews"
+                  role="tab"
+                  aria-controls="reviews"
+                  aria-selected="false"
+                  >Reviews (4)</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mb-0"
+                  id="custom-tab"
+                  data-bs-toggle="tab"
+                  href="#custom"
+                  role="tab"
+                  aria-controls="custom"
+                  aria-selected="false"
+                  >Custom Tab</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content mt-5" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="description"
+                role="tabpanel"
+                aria-labelledby="description-tab"
+              >
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h5>So why do we do it?</h5>
+                    <p class="mb-4">
+                      The best way is to develop and follow a plan. Start with
+                      your goals in mind and then work backwards to develop the
+                      plan. What steps are required to get you to the goals?
+                      Make the plan as detailed as possible. Try to visualize
+                      and then plan for, every possible setback. Commit the plan
+                      to paper and then keep it with you at all times. Review it
+                      regularly and ensure that every step takes you closer to
+                      your Vision and Goals. If the plan doesn’t support the
+                      vision then change it!
+                    </p>
+                    <h5>Does it need to be done at all?</h5>
+                    <p class="mb-4">
+                      Along with your plans, you should consider developing an
+                      action orientation that will keep you motivated to move
+                      forward at all times. This requires a little
+                      self-discipline, but is a crucial component to achievement
+                      of any kind. Before starting any new activity, ask
+                      yourself if that activity will move you closer to your
+                      goals. If the answer is no, you may want to reconsider
+                      doing it at that time.
+                    </p>
+                    <h5>Can it be done by someone else?</h5>
+                    <p>
+                      The first thing to remember about success is that it is a
+                      process – nothing more, nothing less. There is really no
+                      magic to it and it’s not reserved only for a select few
+                      people. As such, success really has nothing to do with
+                      luck, coincidence or fate. It really comes down to
+                      understanding the steps in the process and then executing
+                      on those steps.
+                    </p>
+                    <p class="mb-4">
+                      There are basically six key areas to higher achievement.
+                      Some people will tell you there are four while others may
+                      tell you there are eight. One thing for certain though, is
+                      that irrespective of the number of steps the experts talk
+                      about, they all originate from the same roots.
+                    </p>
+                    <h5>Can the particular activity be done later?</h5>
+                    <p class="mb-4">
+                      What is the exact sequence of events that will take you to
+                      where you want to be? Have a think consciously of what you
+                      need to do. Every outcome begins with the first step. When
+                      you decide you want to have a romantic meal for two, there
+                      are many steps that you need to perform in order for that
+                      to happen. (Check the fridge, do you have what you want to
+                      serve up? No? Find keys, open garage door, drive car to
+                      the supermarket etc. etc.) You need to determine the exact
+                      sequence of events and write it down. Begin with the
+                      outcome in mind. Write without stopping. 10 years from
+                      now, I plan to be living in a… at…. With…. Get really
+                      detailed about it. Why? Because you are hooking up the
+                      neural connections in your brain. You must improve upon,
+                      clarify and make clear just exactly who and what you are
+                      going to be doing, experiencing, living and having in 10
+                      years. This is the first step of the process! Key: Notice
+                      how you felt excited and optimistic when you did this? The
+                      reason is simple. It’s the life you are designing instead
+                      of the one that was given you and that you have lived with
+                      less intention and purpose to date.
+                    </p>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-4">
+                    <div class="feature-info left-icon mb-4 mb-sm-0 pb-0">
+                      <div class="feature-info-icon">
+                        <i class="flaticon-ambulance fa-4x text-primary"></i>
+                      </div>
+                      <div class="feature-info-content">
+                        <h5 class="feature-info-title">Free shipping</h5>
+                        <p>Free Shipping on orders $199.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="feature-info left-icon mb-4 mb-sm-0 pb-0">
+                      <div class="feature-info-icon">
+                        <i class="flaticon-microscope fa-4x text-primary"></i>
+                      </div>
+                      <div class="feature-info-content">
+                        <h5 class="feature-info-title">24/7 Support</h5>
+                        <p>Online and phone support 24 / 7</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="feature-info left-icon mb-0 pb-0">
+                      <div class="feature-info-icon">
+                        <i class="flaticon-liquid-soap fa-4x text-primary"></i>
+                      </div>
+                      <div class="feature-info-content">
+                        <h5 class="feature-info-title">30 Days return</h5>
+                        <p>30 days money-back guarantee.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="reviews"
+                role="tabpanel"
+                aria-labelledby="tab-reviews"
+              >
+                <div class="row">
+                  <div class="col-12">
+                    <h5 class="mb-4">
+                      4 Reviews for women’s fabric mix midi wrap jumpsuit
+                    </h5>
+                    <div class="commentlist">
+                      <div class="comment-author">
+                        <img
+                          class="img-fluid"
+                          src="{% static 'images/svg/logo-icon.svg' %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="comment-content">
+                        <div class="reviews">
+                          <p class="meta">
+                            <strong>Sara Lisbon </strong>(verified owner) –
+                            November 8, 2020
+                          </p>
+                          <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                          </div>
+                        </div>
+                        <p>
+                          For those of you who are serious about having more,
+                          doing more, giving more and being more, success is
+                          achievable with some understanding of what to do, some
+                          discipline around planning and execution of those
+                          plans and belief that you can achieve your desires.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="commentlist">
+                      <div class="comment-author">
+                        <img
+                          class="img-fluid"
+                          src="{% static 'images/svg/logo-icon.svg' %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="comment-content">
+                        <div class="reviews">
+                          <p class="meta">
+                            <strong>Frank Smith </strong>(verified owner) –
+                            November 8, 2020
+                          </p>
+                          <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                          </div>
+                        </div>
+                        <p>
+                          There are basically six key areas to higher
+                          achievement. Some people will tell you there are four
+                          while others may tell you there are eight. One thing
+                          for certain though, is that irrespective of the number
+                          of steps the experts talk about, they all originate
+                          from the same roots.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="commentlist">
+                      <div class="comment-author">
+                        <img
+                          class="img-fluid"
+                          src="{% static 'images/svg/logo-icon.svg' %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="comment-content">
+                        <div class="reviews">
+                          <p class="meta">
+                            <strong>Joanna williams </strong>(verified owner) –
+                            November 8, 2020
+                          </p>
+                          <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                          </div>
+                        </div>
+                        <p>
+                          Success isn’t really that difficult. There is a
+                          significant portion of the population here in North
+                          America, that actually want and need success to be
+                          hard! Why? So they then have a built-in excuse when
+                          things don’t go their way! Pretty sad situation, to
+                          say the least.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="commentlist">
+                      <div class="comment-author">
+                        <img
+                          class="img-fluid"
+                          src="{% static 'images/svg/logo-icon.svg' %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="comment-content">
+                        <div class="reviews">
+                          <p class="meta">
+                            <strong>Felica Queen </strong>(verified owner) –
+                            November 8, 2020
+                          </p>
+                          <div class="rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                          </div>
+                        </div>
+                        <p>
+                          Making a decision to do something – this is the first
+                          step. We all know that nothing moves until someone
+                          makes a decision. The first action is always in making
+                          the decision to proceed. This is a fundamental step,
+                          which most people overlook.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <h5>Add a review</h5>
+                      <p>
+                        Your email address will not be published. Required
+                        fields are marked *
+                      </p>
+                    </div>
+                    <form class="row mt-4 align-items-center">
+                      <div class="mb-3 mb-3 col-sm-12">
+                        <label class="form-label">Name*</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3 mb-3 col-sm-12">
+                        <label class="form-label">Email*</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3 mb-3 col-sm-12">
+                        <label class="form-label">Your review *</label>
+                        <div class="product-rating">
+                          <i class="far fa-star text-warning"></i>
+                          <i class="far fa-star text-warning"></i>
+                          <i class="far fa-star text-warning"></i>
+                          <i class="far fa-star text-warning"></i>
+                          <i class="far fa-star text-warning"></i>
+                        </div>
+                      </div>
+                      <div class="mb-3 mb-3 col-sm-12">
+                        <label class="form-label">Your message *</label>
+                        <div class="mb-3">
+                          <textarea
+                            class="form-control"
+                            rows="8"
+                            id="comment"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="form-check col-sm-12 p-0">
+                        <div class="custom-control form-check custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="customCheck15"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customCheck15"
+                            >Save my name, email, and website in this browser
+                            for the next time I comment.</label
+                          >
+                        </div>
+                      </div>
+                      <a class="btn btn-primary btn-md mt-4 w-auto" href="#!">
+                        Submit
+                      </a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="custom"
+                role="tabpanel"
+                aria-labelledby="custom-tab"
+              >
+                <div class="row">
+                  <div class="col-12">
+                    <p>
+                      <strong
+                        >The best way is to develop and follow a plan.</strong
+                      >
+                      Start with your goals in mind and then work backwards to
+                      develop the plan. What steps are required to get you to
+                      the goals? Make the plan as detailed as possible. Try to
+                      visualize and then plan for, every possible setback.
+                      Commit the plan to paper and then keep it with you at all
+                      times. Review it regularly and ensure that every step
+                      takes you closer to your Vision and Goals. If the plan
+                      doesn’t support the vision then change it!
+                    </p>
+                    <h5>Why do we use it?</h5>
+                    <p class="mb-0">
+                      It is truly amazing the damage that we, as parents, can
+                      inflict on our children. So why do we do it? For the most
+                      part, we don’t do it intentionally or with malice. In the
+                      majority of cases, the cause is a well-meaning but
+                      unskilled or un-thinking parent, who says the wrong thing
+                      at the wrong time, and the message sticks – as simple as
+                      that!
+                    </p>
+                    <p class="mt-2">
+                      Commitment is something that comes from understanding that
+                      everything has its price and then having the willingness
+                      to pay that price. This is important because nobody wants
+                      to put significant effort into something, only to find out
+                      after the fact that the price was too high.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    product -->
+
+    <!--=================================
+    Related products -->
+    <section class="space-pb">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="title mb-5">
+              <h4>Related products</h4>
+            </div>
+            <div
+              class="owl-carousel"
+              data-nav-dots="false"
+              data-nav-arrow="false"
+              data-items="4"
+              data-sm-items="2"
+              data-lg-items="3"
+              data-md-items="3"
+              data-xs-items="2"
+              data-autoplay="false"
+            >
+              <!-- Related-products-01 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/01.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}"
+                        >Baby stroller and pram for baby</a
+                      >
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <del>$24.99</del> <ins>$12.49</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-01 END -->
+
+              <!-- Related-products-02 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/04.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}"
+                        >Adjustable baby carrier cum kangaroo bag</a
+                      >
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <del>$24.99</del> <ins>$12.49</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-02 END -->
+
+              <!-- Related-products-03 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/02.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}">Nylon puppy dog collar belt</a>
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <del>$20.99</del> <ins>$15.49</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-03 END -->
+
+              <!-- Related-products-04 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/03.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}"
+                        >Pets empire dog feeding steel bowl</a
+                      >
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <del>$21.99</del> <ins>$17.49</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-04 END -->
+
+              <!-- Related-products-05 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/05.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}"
+                        >KosmoCare aluminium shower wheelchair</a
+                      >
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <ins>$25.49 </ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-05 END -->
+
+              <!-- Related-products-06 START -->
+              <div class="item">
+                <div class="product">
+                  <div class="product-image">
+                    <img
+                      class="img-fluid mx-auto"
+                      src="{% static 'images/shop/06.jpg' %}"
+                      alt=""
+                    />
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <a href="{% url 'shopcart' %}">add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title">
+                      <a href="{% url 'shopcart' %}">AmiciCare kart dog care stick</a>
+                    </div>
+                    <div class="product-rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star-half-alt text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                    <div class="product-price">
+                      <del>$27.00</del> <ins>$20.00</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Related-products-06 END -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Related products -->
+
+    <!--footer-->
+    <footer class="space-pt bg-light footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <a href="{% url 'index' %}" class="footer-logo"
+              ><img class="img-fluid" src="{% static 'images/logo.png' %}" alt=""
+            /></a>
+            <p>
+              There’s nothing in this story to make us think he was dreaming
+              about riches.
+            </p>
+            <div class="social-icon mt-3 mt-md-5">
+              <ul>
+                <li>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+            <h6 class="text-primary">Useful Links</h6>
+            <div class="footer-useful-List">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Before After</a></li>
+                <li><a href="#">Cost Calculator</a></li>
+                <li><a href="#">Working Hours</a></li>
+              </ul>
+              <ul class="list-unstyled mb-0">
+                <li><a href="#">Appointment</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Timetable</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Our Newsletter</h6>
+            <div class="footer-contact-info">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <i class="fas fa-fw fa-map-marker-alt text-primary"></i
+                  ><span>Bel Rasheed Tower, Buhaira Corniche,Sharjah - United Arab Emirates</span>
+                </li>
+                <li>
+                  <i class="fas fa-fw fa-phone-alt text-primary"></i
+                  ><span>+971 6 597 4180</span>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-subscribe">
+              <p>
+                Sign up to our newsletter to get the latest news and offers.
+              </p>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  <i class="far fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <h6 class="text-primary">Opening Hours</h6>
+            <div class="opening-time">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="far fa-clock pe-1 text-primary"></i> Mon - Tue<span
+                    class="float-end"
+                    >07:00 am - 11:00 pm</span
+                  >
+                </li>
+                <li>
+                  <i class="far fa-clock pe-1 text-primary"></i> Wed- Thu<span
+                    class="float-end"
+                    >07:00 am - 11:00 pm</span
+                  >
+                </li>
+                <li>
+                  <i class="far fa-clock pe-1 text-primary"></i> Friday<span
+                    class="float-end"
+                    >08:30 am - 09:30 pm</span
+                  >
+                </li>
+                <li>
+                  <i class="far fa-clock pe-1 text-primary"></i> Saturday<span
+                    class="float-end"
+                    >07:00 am - 11:00 pm</span
+                  >
+                </li>
+                <li>
+                  <i class="far fa-clock pe-1 text-primary"></i> Sunday<span
+                    class="float-end"
+                    >07:00 am - 11:00 pm</span
+                  >
+                </li>
+                <li class="text-primary">
+                  Emergency<span class="float-end">24 hours</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div
+              class="col-md-6 text-center copyright text-md-start mb-3 mb-md-0"
+            >
+              <p class="mb-0">
+                &copy; Copyright
+                <span id="copyright">
+                  <script>
+                    document
+                      .getElementById("copyright")
+                      .appendChild(
+                        document.createTextNode(new Date().getFullYear())
+                      );
+                  </script></span
+                >
+                <a href="{% url 'index' %}"> medileaf </a> All Rights Reserved
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="">
+                <ul class="list-unstyled list-inline mb-0">
+                  <li class="list-inline-item mb-0">
+                    <a href="#">Terms & Conditions</a>
+                  </li>
+                  <li class="list-inline-item mb-0"><a href="#">FAQ</a></li>
+                  <li class="list-inline-item">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--=================================
+    footer-->
+
+    <!--=================================
+    Javascript -->
+
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/popper/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="{% static 'js/select2/select2.full.js' %}"></script>
+    <script src="{% static 'js/range-slider/ion.rangeSlider.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/slick/slick.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Template Scripts (Do not remove)-->
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
